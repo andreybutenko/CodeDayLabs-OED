@@ -184,7 +184,31 @@ const unitDatakWh = [
         displayable: Unit.displayableType.NONE,
         preferredDisplay: false,
         note: 'special unit'
+    },
+    {
+        name: 'MJ',
+        identifier: 'megaJoules',
+        unitRepresent: Unit.unitRepresentType.QUANTITY,
+        secInRate: 3600,
+        typeOfUnit: Unit.unitType.UNIT,
+        suffix: '',
+        displayable:
+        Unit.displayableType.ALL,
+        preferredDisplay: false,
+        note: 'MJ'
+    },
+    {
+        name: 'BTU',
+        identifier: '',
+        unitRepresent: Unit.unitRepresentType.QUANTITY,
+        secInRate: 3600,
+        typeOfUnit: Unit.unitType.UNIT,
+        suffix: '',
+        displayable: Unit.displayableType.ALL,
+        preferredDisplay: true,
+        note: 'OED created standard unit'
     }
+    // u1, u2, u3, u16,
 ];
 const conversionDatakWh = [
     {
@@ -194,7 +218,24 @@ const conversionDatakWh = [
         slope: 1,
         intercept: 0,
         note: 'Electric_Utility → kWh'
+    },
+    {
+        sourceName: 'kWh',
+        destinationName: 'MJ',
+        bidirectional: true,
+        slope: 3.6,
+        intercept: 0,
+        note: 'kWh → MJ'
+    },
+    {
+        sourceName: 'MJ',
+        destinationName: 'BTU',
+        bidirectional: true,
+        slope: 947.8,
+        intercept: 0,
+        note: 'MJ → BTU'
     }
+    // c1, c2, c3
 ];
 const meterDatakWh = [
     {

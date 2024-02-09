@@ -58,6 +58,14 @@ mocha.describe('readings API', () => {
                 // Add LG11 here
 
                 // Add LG12 here
+                mocha.it('LG12', async () => {
+                    // Load the data into the database
+                    await prepareTest(unitDatakWh, conversionDatakWh, meterDatakWhGroups, groupDatakWh);
+                    // Get the unit ID since the DB could use any value.
+                    const unitId = await getUnitId('BTU');
+                    // Load the expected response data from the corresponding csv file
+                    const expected = await parseExpectedCsv('src/server/test/web/readingsData/expected_line_group_ri_15-20_mu_kWh_gu_BTU_st_-inf_et_inf.csv');
+                });
 
                 // Add LG13 here
 
